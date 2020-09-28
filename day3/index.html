@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(movieName , movieName1);
+        var movieName = "lost world";
+        var movieName1 = "Jurassic Park" ;
+
+        console.log(movieName); // lost world 
+        function checkMovie(){
+            console.log(movieName1);// undefined 
+            var movieName1 = 'angrez'
+            console.log(movieName1); // angrez 
+            checkMovie1();
+        }
+        function checkMovie1(){
+            console.log(movieName1);// jurrasic park
+            movieName1 = "mib";
+            console.log(movieName1)// mib
+        }
+        console.log(movieName1);// jurassic park 
+        checkMovie();
+        console.log(movieName1);// mib
+    </script>
+</body>
+</html>

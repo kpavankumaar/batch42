@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{
+            background-color: lightgrey;
+        }
+    </style>
+</head>
+<body>
+    
+    <h2 style="background-color:lightgreen">Welcome to Javascript class </h2>
+    <script>
+        var num = 10;
+        var name = 'ravi';
+        
+        // object literal 
+        var obj1 = {
+            name: "Ramesh",
+            age: 20
+        }
+        var obj2 = {
+            name : "ravi"
+        }
+        obj2.age = 15;
+        var friends = [obj1 , obj2, 'avinash',10];
+
+        console.log("before curly braces");
+
+        function fn(){
+            var game= 'football';
+            // console.log(10);
+        }    
+        console.log("after curly braces");
+        for(var i = 0 ; i < 10 ; i++ ){
+            console.log(i);
+        }
+        var h2El = document.getElementsByTagName("h2")[0];
+        h2El.onclick = function(){ // unonimous function
+            console.log("click on h2 element");
+        }
+
+        function read(book1, book2 = 'javascript', fn){
+            console.log(arguments);
+
+            console.log('book1 ' + book1 + "  " + "book2 "+ book2);
+            return book1 + ' '+book2 ;
+        }
+        var val = read("'angular' + name ");
+
+        function runContent(fn){
+            fn(50);
+            
+        }
+
+
+        //while(){}    
+        //console.log()// will be covered in comming session .
+        
+
+        // var headingElement = document.getElementsByTagName('h2')[0];
+        // console.log(headingElement.innerHTML);
+        
+    </script>
+    <script src="./index.js"></script>
+</body>
+</html>

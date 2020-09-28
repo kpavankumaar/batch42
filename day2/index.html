@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // execution context  = creation phase and execution phase 
+        console.log(num); // undefined 
+        var num = 10;
+        console.log(num);// 10
+        
+        function fn2(){
+            console.log(num);// 10
+            num = 30;
+        }
+        function fn3(){
+            fn2();
+            console.log(num)// 30 
+        }
+        function fn1(){
+            console.log(num , num1); // undefined
+            var num = 20;
+            var num1 = 30;
+            console.log(num, num1);// 20 and 30 
+            fn2();
+        }
+        fn1();
+
+        fn3()
+        console.log(num);
+    </script>
+</body>
+</html>
