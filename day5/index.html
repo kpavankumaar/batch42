@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // call by value 
+        var num = 10;
+        var num1 = num ;
+        num1 = 20;
+        console.log(num1 , num );
+        // call by reference 
+        var obj = {
+            name: 'angular',
+        }
+        var obj1 = obj
+        obj1.name = 'ravi';
+
+        console.log(obj.name);
+        var data = Object.create(obj);
+        data.name = 'pavan';
+        console.log(data );
+
+        function fn2(){
+            console.log(this); // window 
+            console.log(num);// 10
+            num = 30;
+        }
+
+        
+
+    </script>
+</body>
+</html>
