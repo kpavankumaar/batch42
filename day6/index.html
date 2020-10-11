@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            width:150px;
+            
+        }
+        label{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Deep dive into Javascript</h3>
+    <form>
+        <input type="text" id = "username"> <label for="username"> username</label>
+    </form>
+    <script>
+        var dataSend;
+        var data = document.getElementById('username');
+        data.onkeyup = function(e){
+            console.log(e.target.value);
+            dataSend = new ShareData(e.target.value);
+            console.log(dataSend);
+            // ajax call 
+            
+        }
+        function ShareData(data){
+            this.username =  data;
+        }
+        var contentContainer = document.getElementsByTagName('h3')[0];
+        console.log(contentContainer.innerText)
+        console.log(this);
+        function calc(){
+            console.log(this);
+            
+        }
+        contentContainer.onclick = calc;
+
+        var obj = {
+            name: 'ravi',
+            details : function (){
+                console.log(this);
+                function data(){
+                    console.log(this);
+
+                }
+                data();
+            }
+        }
+        obj.details();
+        // assign your own value to keyword this 
+        function Content(e){
+            this.data = e;
+            return this;
+        }
+
+        var obj1 = {};
+        var obj2 = Object.create(obj1);
+        var obj3 = Content.call(obj1, 5); // obj1.data 
+
+        Content.run = function(){
+            console.log('test');
+        }
+        
+
+
+    </script>
+</body>
+</html>
