@@ -65,6 +65,7 @@ dataFromUrl1.then(function(data){
 // dataFromUrl1.catch(function(){
 
 // })
+
 var name = "krishna";
 console.log(name);
 function sample(){
