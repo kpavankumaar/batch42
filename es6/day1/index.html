@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const test_name = "val";
+        // test_name = "run";
+
+        const obj = {
+            name:"krishna",
+            address : 'hyd',
+        }
+        
+        // obj = {
+        //     name:"krishna",
+        //     address : 'hyd',
+        // };
+        //Uncaught TypeError: Assignment to constant variable.at index.html:17
+
+        obj.phonenumber = 'xyz';
+        obj.name = 'Radha';
+        // referenece 
+        // obj.testRun = function (){
+        //     console.log(this); // obj
+        //     // iife
+        //     (function(){
+        //         console.log(this); // window object
+        //     })()
+        // }
+        // obj.testRun();
+        
+
+        // modify the obj.testRun 
+        obj.testRun = () => {
+            console.log(this); // window object
+            // iife
+            (function(){
+                console.log(this); // window object
+            })()
+        }
+        obj.testRun();
+        // example 2 ;
+
+        function printData (fn){
+            /// async api call 
+            let data;
+            fn(data);
+        }
+        function getData(){
+            let fetchData
+            printData((data) => {fetchData = data});
+        };
+
+        // example 3 
+        // let addVal = (num1, num2) => { return num1 + num2 }; // function performing only operation and returning the value 
+        let addVal = (num1, num2) =>  num1 + num2;
+        
+        // example 4
+        let _test = '';
+        let testFn = () => {
+            let _test = 10;
+            console.log(_test);
+        }
+        
+    </script>
+</body>
+</html>
