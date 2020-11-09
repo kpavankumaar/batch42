@@ -1,0 +1,26 @@
+// let name_1 = "data";
+// var data = "test";
+// var name_1 = "content";
+var age;
+age = "";
+var obj = "";
+obj = 10;
+// let arr: number[] ;
+var arr;
+arr = [1, 2, 3, 4, 5, ""];
+var arr1;
+arr1 = ["", 10];
+arr1 = [10, "ravi"];
+arr1 = [8, "srk"];
+arr1[1] = "pavan";
+arr1[2] = "test";
+console.log(arr1);
+var Color;
+(function (Color) {
+    Color[Color["red"] = 1] = "red";
+    Color[Color["green"] = 2] = "green";
+    Color[Color["yellow"] = 3] = "yellow";
+})(Color || (Color = {}));
+console.log(Color.green);
+var choose = Color.green;
+console.log(choose);

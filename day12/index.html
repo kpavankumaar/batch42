@@ -24,7 +24,7 @@
         var recursive = [1,2,3,4,5,6,7];
         for(var i =0 ; i < recursive.length ; i = i +1){
             console.log(i);
-        }   
+        };  
         console.log(i);
         // higher order functions
         var arrData = recursive.map(function(item){
@@ -34,8 +34,64 @@
             }
             
         });
-        
+        // filter 
+        // filtered return values are not modified . it is must to use return statement but return value can be of any datatype
+        var arrData1 = recursive.filter(function(item){
+            if(item > 5){
+                console.log(item);
+                return "data";
+            }
+        });
 
-</script>
+        // reduce 
+        recursive = [1,2,3,4,5,6,7];
+
+        var arrData2 = recursive.reduce(function(firstValInArr, secondParam, indexNumForSecondParam, recArr){
+            console.log(arrData2);
+            return firstValInArr + secondParam;
+        });
+
+        var prop = [{"age": 10}, {"name": "krishna"}, {"studying": "javascript"}]
+        var obj = prop.reduce(function(param1, param2, param3, param4){
+            for (const key in param2) {
+                    if (param2.hasOwnProperty(key)) {
+                        param1[key] = param2[key];                 
+                    }
+                }
+                return param1;
+        }, {});
+        // closures, IIFE 
+        function setContent(text){
+            var num = 10;
+            function test(){
+                console.log(test);
+            }
+            return function displayValue(show){
+                console.log(text + " "+ show + " " + num);
+                test();
+            }
+        }
+        
+        var showData = setContent('Javascript');
+        showData("closures");
+        
+        // IIFE
+        var obj_12 = {};
+        (function(param1){
+            var address = "data";
+            console.log(prop);
+            param1.age = 10;
+        })(obj_12);
+        // jquery.com
+        
+        // post increment opertor concept  i++ function call would return unmodified value , but variable is initialized with modified value
+        var num = 10; 
+        function test_1(){
+            num1 = num
+            num = num + 1
+            return num1;
+        }
+        var getInfo = test_1();
+    </script>
 </body>
 </html>
