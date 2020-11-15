@@ -6,8 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angularconcepts';
+  title = 'communication';
   constructor(){
     console.log(" constructor app component")
+  }
+  updatedData(content){
+    console.log(content);
+  }
+  dataFromChildComponent(item){
+      console.log(item);
   }
 }

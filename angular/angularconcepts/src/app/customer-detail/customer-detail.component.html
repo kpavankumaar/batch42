@@ -1,1 +1,31 @@
-<p>customer-detail works!</p>
+<h3>{{title}} works!</h3>
+<p>{{dataFromParentEl}}</p>
+<input type="{{type1}}">
+
+<div>
+    <label>Frist Name </label>
+    <input type="text" (keyup)  = "updateFirstName($event.target.value)" [value] = "userInfo.firstname">
+</div>
+<div>
+    <label>Last Name </label>
+    <input type="text" id = "lastname" (keyup.enter) = "dataset($event.target.value)" [value] = "userInfo.lastname">
+</div>
+<div>
+    <label>email </label>
+    <input type="text" [value] = "userInfo.email">
+</div>
+<div>
+    <label>Phone number </label>
+    <input type="text" (keyup) = "dataset1(phone.value)" #phone [value] = "userInfo.phone" >
+</div>
+<p *ngIf = "true"> sum of 1 + 2 = {{ 1 + 2 === 4-1 }}</p>
+<ul>
+    <li *ngFor = "let item of items" [ngStyle] = "{'color':'red'}" [ngClass] = "{'applyBgColor': true, 'incFont': false}" >
+        {{item}}
+    </li>
+</ul>
+
+<button (click) = "dataSubmit()">Submit  </button>
+<div>
+    <h2 appModifyEl >heading modified by directive </h2>
+</div>
