@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 
 
 
@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   templateUrl: './customer-detail.component.html',
   styleUrls: ['./customer-detail.component.css']
 })
-export class CustomerDetailComponent implements OnInit {
+export class CustomerDetailComponent implements OnChanges,OnInit {
   title = "customer detail";
   type1 = "password";
   @Input() dataFromParentEl;
@@ -18,6 +18,10 @@ export class CustomerDetailComponent implements OnInit {
     email: "krishna@gmail.com",
     phone: 9876543210
    }  
+
+  ngOnChanges(obj){
+    console.log(obj);
+  } 
   constructor(){
     console.log(" constructor CustomerDetailComponent")
   }
