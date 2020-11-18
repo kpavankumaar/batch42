@@ -10,6 +10,9 @@ export class AppComponent {
   constructor(){
     console.log(" constructor app component")
   }
+  ngOnInit(){
+    console.log(" ngOnInit app component")
+  }
   updatedData(content){
     console.log(content);
   }

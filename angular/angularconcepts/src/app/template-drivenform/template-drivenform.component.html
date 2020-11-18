@@ -1,0 +1,10 @@
+<p>template-drivenform works!</p>
+{{firstnameVal}}
+<form  (ngSubmit)="sendData()">
+    <div><label for="firstname"> firstname </label>
+        <input type="text" [(ngModel)]= "firstnameVal" name="firstname"></div>
+    <div><label for="lastname"> lastname </label><input type="text"></div>
+    <div><label for = "phone">Phone </label> <input type="number"></div>
+
+    <button>Submit</button>
+</form>

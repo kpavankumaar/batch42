@@ -15,5 +15,8 @@ export class CustomersComponent implements OnInit {
   ngOnInit(): void {
     console.log("customers component ng on init ")
   }
+  ngDoCheck(){
+    console.log("CustomersComponent ngdocheck");
+  }
 
 }

@@ -11,7 +11,8 @@ export class CustomersComponent implements OnInit {
     console.log(" constructor CustomersComponent")
   }
 
-  ngOnInit(): void {
+  ngOnInit():void{
+    console.log(" ngOnInit CustomersComponent");
   }
 
 }

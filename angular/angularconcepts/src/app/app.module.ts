@@ -12,6 +12,8 @@ import { SampleChild2Component } from './sample-child2/sample-child2.component';
 import { Sample1Child1Component } from './sample1-child1/sample1-child1.component';
 import { Sample1Child2Component } from './sample1-child2/sample1-child2.component';
 import { ModifyElDirective } from './modify-el.directive';
+import { TemplateDrivenformComponent } from './template-drivenform/template-drivenform.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,13 +26,15 @@ import { ModifyElDirective } from './modify-el.directive';
     SampleChild2Component,
     Sample1Child1Component,
     Sample1Child2Component,
-    ModifyElDirective
+    ModifyElDirective,
+    TemplateDrivenformComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
-  bootstrap: [SampleComponent,AppComponent,Sample1Component]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

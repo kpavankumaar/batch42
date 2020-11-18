@@ -21,14 +21,19 @@ export class CustomerDetailComponent implements OnChanges,OnInit {
 
   ngOnChanges(obj){
     console.log(obj);
+    this.type1 = this.dataFromParentEl;
   } 
   constructor(){
     console.log(" constructor CustomerDetailComponent")
   }
   
   ngOnInit(): void {
-    
+    this.type1 = "red";
+    console.log(" ngOnInit on CustomerDetailComponent", this.type1);
 
+  }
+  ngDoCheck(){
+    console.log("change detection")
   }
   dataSubmit(){
     this.dataFromChild.emit("data ")

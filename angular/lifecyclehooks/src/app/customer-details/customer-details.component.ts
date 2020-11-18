@@ -14,5 +14,11 @@ export class CustomerDetailsComponent implements OnInit {
   ngOnInit(): void {
     console.log("customer details component ngOnInit ");
   }
+  ngDoCheck(){
+    console.log("CustomerDetailsComponent ngdocheck");
+  }
+  methodCall(val){
+    console.log(val);
+  }
 
 }

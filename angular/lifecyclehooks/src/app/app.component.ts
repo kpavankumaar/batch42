@@ -13,10 +13,14 @@ export class AppComponent {
   ngOnChanges(){
    console.log('app component ngonchanges') 
   }
+  ngDoCheck(){
+    console.log("appcomponent ngdocheck");
+  }
   ngOnInit(): void {
     console.log("app component ng on init ")
   }
   updateTitle(val){
     this.obj = val;
   }
+  
 }
