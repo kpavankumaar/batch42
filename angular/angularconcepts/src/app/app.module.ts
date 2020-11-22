@@ -13,7 +13,8 @@ import { Sample1Child1Component } from './sample1-child1/sample1-child1.componen
 import { Sample1Child2Component } from './sample1-child2/sample1-child2.component';
 import { ModifyElDirective } from './modify-el.directive';
 import { TemplateDrivenformComponent } from './template-drivenform/template-drivenform.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactivemodelComponent } from './reactivemodel/reactivemodel.component';
 
 @NgModule({
   declarations: [
@@ -27,12 +28,14 @@ import { FormsModule } from '@angular/forms';
     Sample1Child1Component,
     Sample1Child2Component,
     ModifyElDirective,
-    TemplateDrivenformComponent
+    TemplateDrivenformComponent,
+    ReactivemodelComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,16 @@
+<h3>reactivemodel works!</h3>
+<form [formGroup] = "formModel" (ngSubmit)="sendData()">
+    <div formGroupName = "fullName">
+    <div><label for="firstname" > firstname </label>
+        <input type="text" formControlName = firstName ></div>
+        <p> Dirty : state {{formModel.controls.firstName?.dirty}}</p>
+        <p> Pristine : state {{formModel.controls.firstName?.pristine}}</p>
+        <p> Valid : state {{formModel.controls.firstName?.valid}}</p>
+        <p> Invalid : state {{formModel.controls.firstName?.invalid}}</p>
+        <p> Touched : state {{formModel.controls.firstName?.touched}}</p>
+        <p> untouched: state {{formModel.controls.firstName?.untouched}}</p>
+
+        <div><label for="lastname"> lastname </label><input type="text"></div>
+    </div>
+    <button [disabled] = "formModel.invalid" > submit</button>
+</form>

@@ -1,10 +1,90 @@
 <p>template-drivenform works!</p>
 {{firstnameVal}}
-<form  (ngSubmit)="sendData()">
+<form #formData =  "ngForm" (ngSubmit)="sendData(formData)">
     <div><label for="firstname"> firstname </label>
-        <input type="text" [(ngModel)]= "firstnameVal" name="firstname"></div>
-    <div><label for="lastname"> lastname </label><input type="text"></div>
-    <div><label for = "phone">Phone </label> <input type="number"></div>
+        <input type="text" [(ngModel)]= "firstnameVal" name="firstname" required></div>
+        <p> Dirty : state {{formData.controls.firstname?.dirty}}</p>
+        <p> Pristine : state {{formData.controls.firstname?.pristine}}</p>
+        <p> Valid : state {{formData.controls.firstname?.valid}}</p>
+        <p> Invalid : state {{formData.controls.firstname?.invalid}}</p>
+        <p> Touched : state {{formData.controls.firstname?.touched}}</p>
+        <p> untouched: state {{formData.controls.firstname?.untouched}}</p>
 
-    <button>Submit</button>
+        <div><label for="lastname"> lastname </label><input type="text"></div>
+    <div>
+        <label for = "phone">Phone </label> 
+        <input type="phone" 
+            minlength="10"
+            maxlength="10"
+            name="phone"
+            ngModel 
+            >
+        <p [ngClass]="{ error: formData.controls.phone?.invalid, 
+                        validMsg: formData.controls.phone?.valid}">
+            Mandatory Field
+        </p>
+        <p [ngClass]="{ error: formData.controls.phone?.errors?.minlength ? true : false,
+            validMsg: formData.controls.phone?.errors?.minlength ? false : true
+                        }">
+            phone number must not be less than 10 characters
+            <!-- {{formData.controls.phone?.errors ? true : false}} -->
+        </p>
+        <p [ngClass]="{ error: formData.controls.phone?.errors?.maxlength ? true : false,
+            validMsg: formData.controls.phone?.errors?.maxlength ? false : true
+                        }">
+            phone number must not be more than 10 characters
+            <!-- {{formData.controls.phone?.errors ? true : false}} -->
+        </p>
+    </div>
+    <div>
+        <label for = "email">Email </label> 
+        <input type="email" 
+            name="email"
+            pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+            required
+            ngModel 
+        >
+        <p [ngClass]="{ error: formData.controls.email?.invalid, 
+                        validMsg: formData.controls.email?.valid}">
+            Enter a valid email address
+        </p>
+        <p [ngClass]="{ error: formData.controls.email?.errors?.minlength ? true : false,
+            validMsg: formData.controls.email?.errors?.minlength ? false : true
+                        }">
+            email number must not be less than 10 characters
+            <!-- {{formData.controls.email?.errors ? true : false}} -->
+        </p>
+        <p [ngClass]="{ error: formData.controls.email?.errors?.maxlength ? true : false,
+            validMsg: formData.controls.email?.errors?.maxlength ? false : true
+                        }">
+            email number must not be more than 10 characters
+            <!-- {{formData.controls.email?.errors ? true : false}} -->
+        </p>
+    </div>
+    <div>
+        <label for = "choose">Validate through </label> 
+        <input type="radio" 
+            name="phonenumber"
+            
+            ngModel 
+        >
+        <p [ngClass]="{ error: formData.controls.email?.invalid, 
+                        validMsg: formData.controls.email?.valid}">
+            Enter a valid email address
+        </p>
+        <p [ngClass]="{ error: formData.controls.email?.errors?.minlength ? true : false,
+            validMsg: formData.controls.email?.errors?.minlength ? false : true
+                        }">
+            email number must not be less than 10 characters
+            <!-- {{formData.controls.email?.errors ? true : false}} -->
+        </p>
+        <p [ngClass]="{ error: formData.controls.email?.errors?.maxlength ? true : false,
+            validMsg: formData.controls.email?.errors?.maxlength ? false : true
+                        }">
+            email number must not be more than 10 characters
+            <!-- {{formData.controls.email?.errors ? true : false}} -->
+        </p>
+    </div>
+
+    <button [disabled] = "formData.invalid">Submit</button>
 </form>
