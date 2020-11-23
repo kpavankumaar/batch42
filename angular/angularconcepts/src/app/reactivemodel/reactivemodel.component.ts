@@ -17,6 +17,12 @@ export class ReactivemodelComponent implements OnInit {
         lastName: new FormControl()
 
       }),
+      crossFieldValidation: new FormGroup({
+        fieldValidate:new FormControl("email", Validators.required),
+        
+      }),
+      email: new FormControl("", Validators.pattern("pavan@gmail.com")),
+      phone: new FormControl()
     })
   }
   sendData(){

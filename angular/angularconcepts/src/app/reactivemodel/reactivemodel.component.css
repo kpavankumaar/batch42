@@ -1,0 +1,9 @@
+div{
+    width:600px;
+    margin:auto
+}
+label{
+    width: 100px;
+    display: inline-block;
+    margin-top:5px;
+}

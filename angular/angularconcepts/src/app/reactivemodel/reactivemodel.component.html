@@ -1,8 +1,10 @@
 <h3>reactivemodel works!</h3>
 <form [formGroup] = "formModel" (ngSubmit)="sendData()">
     <div formGroupName = "fullName">
-    <div><label for="firstname" > firstname </label>
-        <input type="text" formControlName = firstName ></div>
+        <div>
+            <label for="firstname" > firstname </label>
+            <input type="text" formControlName = 'firstName' >
+        </div>
         <p> Dirty : state {{formModel.controls.firstName?.dirty}}</p>
         <p> Pristine : state {{formModel.controls.firstName?.pristine}}</p>
         <p> Valid : state {{formModel.controls.firstName?.valid}}</p>
@@ -12,5 +14,29 @@
 
         <div><label for="lastname"> lastname </label><input type="text"></div>
     </div>
+    <div formGroupName = "crossFieldValidation">
+        <p>Validate using</p>
+        <label for="emailv" > email </label>
+        <input type="radio" value="email" formControlName = 'fieldValidate' >
+        <label for="phonev" > Phone  </label>
+        <input type="radio" value= "phone" formControlName = 'fieldValidate' >
+    </div>
+    <div>
+        <label for="email" > email </label>
+        <input type="eamil" formControlName = 'email' >
+        <div *ngIf = "formModel.controls.email.invalid">
+            Enter a valid email address
+        </div>
+    </div>
+    <div>
+        <label for="phone" > Phone </label>
+        <input type="text" formControlName = 'phone' >
+        <div *ngIf = "formModel.controls.phone.invalid">
+            Enter phone number 
+        </div>
+    </div>
+
+    
     <button [disabled] = "formModel.invalid" > submit</button>
+
 </form>
