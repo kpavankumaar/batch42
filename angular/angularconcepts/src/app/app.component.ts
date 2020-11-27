@@ -13,6 +13,10 @@ export class AppComponent {
   ngOnInit(){
     console.log(" ngOnInit app component")
   }
+  ngDoCheck(){
+    console.log(" ngDoCheck app component")
+  }
+  
   updatedData(content){
     console.log(content);
   }

@@ -33,7 +33,7 @@ export class CustomerDetailComponent implements OnChanges,OnInit {
 
   }
   ngDoCheck(){
-    console.log("change detection")
+    console.log(" CustomerDetailComponent  ngDoCheck")
   }
   dataSubmit(){
     this.dataFromChild.emit("data ")

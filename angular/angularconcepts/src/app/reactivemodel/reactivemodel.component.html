@@ -14,16 +14,22 @@
 
         <div><label for="lastname"> lastname </label><input type="text"></div>
     </div>
-    <div formGroupName = "crossFieldValidation">
+    <div formGroupName = "crossFieldValidation" >
         <p>Validate using</p>
         <label for="emailv" > email </label>
-        <input type="radio" value="email" formControlName = 'fieldValidate' >
+        <input type="radio" #chooseEmail value="email" formControlName = 'fieldValidate' (change) = "updateFieldValidation(chooseEmail.value)" >
         <label for="phonev" > Phone  </label>
-        <input type="radio" value= "phone" formControlName = 'fieldValidate' >
+        <input 
+            #choosePhone
+            type="radio" 
+            value= "phone" 
+            formControlName = 'fieldValidate' 
+            (change) = "updateFieldValidation(choosePhone.value)"
+        >
     </div>
     <div>
         <label for="email" > email </label>
-        <input type="eamil" formControlName = 'email' >
+        <input type="email" formControlName = 'email' >
         <div *ngIf = "formModel.controls.email.invalid">
             Enter a valid email address
         </div>
@@ -35,7 +41,15 @@
             Enter phone number 
         </div>
     </div>
+    <div>
+        <label for="range" > Range </label>
+        <input type="number" id="range" name="points" min="0" max="5" formControlName = "range">
+        <div *ngIf = "formModel.get('range').errors?.range">
+            Rate us on a scale of 1 to 5 
+        </div>
+    </div>
 
+    
     
     <button [disabled] = "formModel.invalid" > submit</button>
 

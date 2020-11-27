@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-p1c1',
@@ -7,8 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class P1c1Component implements OnInit {
 
-  constructor() { }
-
+  count=0;
+  constructor(private ref:ChangeDetectorRef) { 
+    setInterval(() => {
+      this.count = this.count + 1 ;
+      
+      this.ref.markForCheck();
+    },2000)
+    
+  }
   ngOnInit(): void {
   }
   ngDoCheck(){
