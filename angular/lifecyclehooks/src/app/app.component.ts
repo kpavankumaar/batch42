@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  content:string;
   obj = {
     
     title:'lifecyclehooks'
@@ -17,6 +18,9 @@ export class AppComponent {
     console.log("appcomponent ngdocheck");
   }
   ngOnInit(): void {
+    setTimeout(() =>{
+      this.content = "data"
+    }, 10000);
     console.log("app component ng on init ")
   }
   updateTitle(val){

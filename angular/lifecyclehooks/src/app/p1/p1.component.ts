@@ -17,5 +17,11 @@ export class P1Component implements OnInit {
   ngDoCheck(){
     console.log("P1Component change detection")
   }
+  ngAfterContentInit(){
+    console.log("P1Component ngAfterContentInit")
+  }
+  ngAfterContentChecked(){
+    console.log("P1Component ngAfterContentChecked")
+  }
 
 }

@@ -10,10 +10,10 @@ export class P1c2Component implements OnInit {
   count = 0;
   constructor(private cd:ChangeDetectorRef) { 
     // this.cd.detach();
-    setInterval(() => {
-      this.count = this.count + 1;
+    // setInterval(() => {
+    //   this.count = this.count + 1;
       
-    },2000)
+    // },2000)
   }
 
   ngOnInit(): void {

@@ -9,16 +9,19 @@ export class P1c1Component implements OnInit {
 
   count=0;
   constructor(private ref:ChangeDetectorRef) { 
-    setInterval(() => {
-      this.count = this.count + 1 ;
+    // setInterval(() => {
+    //   this.count = this.count + 1 ;
       
-      this.ref.markForCheck();
-    },2000)
+    //   this.ref.markForCheck();
+    // },2000)
     
   }
   ngOnInit(): void {
   }
   ngDoCheck(){
     console.log("P1c1 Component change detection")
+  }
+  ngAfterContentInit(){
+    console.log("P1c1 Component ngAfterContentInit")
   }
 }
