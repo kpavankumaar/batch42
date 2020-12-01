@@ -28,7 +28,7 @@ import { P1Module } from './p1/p1.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    P1Module,
+    // P1Module
   ],
   providers: [],
   bootstrap: [AppComponent]
