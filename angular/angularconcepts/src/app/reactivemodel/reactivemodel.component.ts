@@ -29,7 +29,7 @@ export class ReactivemodelComponent implements OnInit,DoCheck {
         fieldValidate:new FormControl("email"),
         
       }),
-      range: new FormControl(5, rangeValidate),
+      // range: new FormControl(5, rangeValidate),
       email: new FormControl("", Validators.pattern("pavan@gmail.com")),
       phone: new FormControl("", Validators.required)
     })

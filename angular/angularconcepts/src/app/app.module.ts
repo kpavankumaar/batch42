@@ -15,7 +15,10 @@ import { ModifyElDirective } from './modify-el.directive';
 import { TemplateDrivenformComponent } from './template-drivenform/template-drivenform.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReactivemodelComponent } from './reactivemodel/reactivemodel.component';
+import { StoredataService } from './storedata.service';
 
+import { HttpClientModule  } from '@angular/common/http';
+import { ServiceModule } from './services/service/service.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,9 +38,11 @@ import { ReactivemodelComponent } from './reactivemodel/reactivemodel.component'
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    ServiceModule
   ],
-  providers: [],
+  providers: [StoredataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

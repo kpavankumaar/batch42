@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StoredataService } from '../storedata.service';
 
 @Component({
   selector: 'app-customers',
@@ -7,12 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomersComponent implements OnInit {
 
-  constructor(){
+  constructor(private getdata: StoredataService){
     console.log(" constructor CustomersComponent")
   }
 
   ngOnInit():void{
     console.log(" ngOnInit CustomersComponent");
+    console.log(this.getdata.authenticated)
   }
   ngDoCheck(){
     console.log(" ngDoCheck CustomersComponent");
