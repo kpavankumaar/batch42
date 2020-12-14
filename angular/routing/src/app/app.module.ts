@@ -15,17 +15,17 @@ import { MobileComponent } from './product/mobile/mobile.component';
 
 // let data;
 // let test = new RouterModule("",data);
-let routes:Routes = [
-  {path:"home", component: HomeComponent},
-  {path:"about", component: AboutComponent},
-  {path:"services", component:ServicesComponent},
-  {path:"product", component: ProductComponent, 
-    children:[
-      {path:"mobile", component:MobileComponent}]
-    },
+// let routes:Routes = [
+//   {path:"home", component: HomeComponent},
+//   {path:"about", component: AboutComponent},
+//   {path:"services", component:ServicesComponent},
+//   {path:"product", component: ProductComponent, 
+//     children:[
+//       {path:"mobile", component:MobileComponent}]
+//     },
   
-  {path:"**", component: PagenotfoundComponent },
-]
+//   {path:"**", component: PagenotfoundComponent },
+// ]
 
 @NgModule({
   declarations: [
@@ -39,7 +39,7 @@ let routes:Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes),
+    // RouterModule.forRoot(routes),
     AppRoutingModule
   ],
   providers: [],

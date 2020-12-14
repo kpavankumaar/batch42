@@ -1,3 +1,16 @@
-<p>sample works!</p>
+
+<p>samples works!</p>
+<form #userData = "ngForm" (ngSubmit) = "transferData(userData)">
+    <input type="text" name= "username" ngModel placeholder="username"><br>
+    <input type="password" name = "password" ngModel placeholder="password"><br>
+    <button>Sign In</button>
+</form>
+<table>
+    <tr *ngFor = "let item of apiData">
+        <td>{{item.id}}</td>
+        <td>{{item.title}}</td>
+        <td>{{item.body}}</td>
+    </tr>
+</table>
 <app-sample-child1></app-sample-child1>
 <app-sample-child2></app-sample-child2>

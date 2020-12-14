@@ -36,8 +36,8 @@ import { ServiceModule } from './services/service/service.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
+    AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
     ServiceModule

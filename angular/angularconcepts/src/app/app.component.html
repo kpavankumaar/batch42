@@ -1,7 +1,10 @@
-<app-sample></app-sample>
-<app-reactivemodel></app-reactivemodel>
-<app-template-drivenform></app-template-drivenform>
-<h1 appModifyEl >Welcome to Angular </h1>
-<!-- <app-sample></app-sample> -->
-<app-customers></app-customers>
+<div class="container">
+    <app-sample></app-sample>
+    <!-- <app-reactivemodel></app-reactivemodel> -->
+    <!-- <app-template-drivenform></app-template-drivenform> -->
+    <h1 appModifyEl >Welcome to Angular </h1>
+    <!-- <app-sample></app-sample> -->
+    <app-customers></app-customers>
 <app-customer-detail [dataFromParentEl] = "title" (dataFromChild) = "dataFromChildComponent('data')"></app-customer-detail>
+</div>
+
